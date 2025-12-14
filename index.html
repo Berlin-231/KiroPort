@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prasann Deshpande - Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Interactive Background -->
+    <canvas id="background-canvas"></canvas>
+    
+    <!-- Title Bar -->
+    <div class="title-bar">
+        <div class="title-left">
+            <h1>Prasann Deshpande</h1>
+        </div>
+        <div class="title-right">
+            <a href="Prasann_Deshpande_Resume_Security.pdf" class="resume-btn" target="_blank">
+                <i class="fas fa-download"></i>
+                <span>Download Resume</span>
+            </a>
+        </div>
+    </div>
+
+    <!-- Main Profile Card -->
+    <div class="profile-card">
+        <div class="profile-image">
+            <img src="MyImage.jfif" alt="Prasann Deshpande" id="profile-img">
+        </div>
+        <div class="profile-info">
+            <h1>Prasann Deshpande</h1>
+            <h2>Cybersecurity Professional</h2>
+            <p class="location"><i class="fas fa-map-marker-alt"></i> Berlin, Germany</p>
+            <div class="highlights">
+                <span class="highlight">Security Analyst</span>
+                <span class="highlight">5+ Years Experience</span>
+                <span class="highlight">AWS Certified</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Interactive Sections -->
+    <div class="section-circle professional" data-section="professional">
+        <div class="circle-content">
+            <i class="fas fa-briefcase"></i>
+        </div>
+        <div class="section-title">Professional</div>
+    </div>
+
+    <div class="section-circle education" data-section="education">
+        <div class="circle-content">
+            <i class="fas fa-graduation-cap"></i>
+        </div>
+        <div class="section-title">Education</div>
+    </div>
+
+    <div class="section-circle contact" data-section="contact">
+        <div class="circle-content">
+            <i class="fas fa-envelope"></i>
+        </div>
+        <div class="section-title">Contact</div>
+    </div>
+
+    <div class="section-circle about" data-section="about">
+        <div class="circle-content">
+            <i class="fas fa-user"></i>
+        </div>
+        <div class="section-title">About Me</div>
+    </div>
+
+    <!-- Detail Cards -->
+    <div id="professional-card" class="detail-card professional-theme">
+        <div class="card-header">
+            <h3><i class="fas fa-briefcase"></i> Professional Experience</h3>
+            <button class="close-btn">&times;</button>
+        </div>
+        <div class="card-content">
+            <div class="job-item">
+                <h4>Senior Information Security Analyst</h4>
+                <p class="company">G Financial Services</p>
+                <p class="duration">2025 - Present</p>
+                <ul>
+                    <li>Led incident response for critical security breaches</li>
+                    <li>Implemented SIEM solutions reducing detection time by 60%</li>
+                    <li>Conducted vulnerability assessments for 50+ systems</li>
+                    <li>Developed security policies and compliance frameworks</li>
+                </ul>
+            </div>
+            <div class="job-item">
+                <h4>Senior Software Engineer - Cloud Security</h4>
+                <p class="company">Bosch USA</p>
+                <p class="duration">2021 - 2025</p>
+                <ul>
+                    <li>Led software development efforts for multiple IOT projects</li>
+                    <li>Developed scalable architecture for serverless cloud systems</li>
+                    <li>Collaborated with IT teams on security architecture</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="education-card" class="detail-card education-theme">
+        <div class="card-header">
+            <h3><i class="fas fa-graduation-cap"></i> Education</h3>
+            <button class="close-btn">&times;</button>
+        </div>
+        <div class="card-content">
+            <div class="education-item">
+                <h4>Master's in Computer Science</h4>
+                <p class="institution">State University of New York at Binghamton</p>
+                <p class="year">2019-2021</p>
+                <p class="description">Specialized in data structures, cloud development, cyber security.</p>
+            </div>
+            <div class="education-item">
+                <h4>Bachelor's in Information Technology</h4>
+                <p class="institution">Pune University</p>
+                <p class="year">2016-2020</p>
+                <p class="description">Foundation in programming, networks, and system security.</p>
+            </div>
+            <div class="certifications">
+                <h4>Certifications</h4>
+                <div class="cert-list">
+                    <span class="cert-badge">AWS Certified Solutions Architect</span>
+                    <span class="cert-badge">AWS Certified Developer</span>
+                    <span class="cert-badge">AWS Certified Security Specialty</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="contact-card" class="detail-card contact-theme">
+        <div class="card-header">
+            <h3><i class="fas fa-envelope"></i> Contact Information</h3>
+            <button class="close-btn">&times;</button>
+        </div>
+        <div class="card-content">
+            <div class="contact-grid">
+                <div class="contact-item">
+                    <i class="fas fa-envelope"></i>
+                    <div>
+                        <h4>Email</h4>
+                        <a href="mailto:prasann.deshpande@example.com">prasann.deshpande@example.com</a>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <i class="fab fa-linkedin"></i>
+                    <div>
+                        <h4>LinkedIn</h4>
+                        <a href="https://www.linkedin.com/in/prasanndeshpande/" target="_blank">Connect with me</a>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <div>
+                        <h4>Location</h4>
+                        <span>Berlin, Germany</span>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-download"></i>
+                    <div>
+                        <h4>Resume</h4>
+                        <a href="Prasann_Deshpande_Resume_Security.pdf" target="_blank">Download PDF</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="about-card" class="detail-card about-theme">
+        <div class="card-header">
+            <h3><i class="fas fa-user"></i> About Me</h3>
+            <button class="close-btn">&times;</button>
+        </div>
+        <div class="card-content">
+            <div class="about-section">
+                <h4>Professional Summary</h4>
+                <p>Experienced cybersecurity professional with 5+ years of expertise in threat analysis, incident response, and security architecture. Passionate about protecting digital assets and implementing robust security frameworks.</p>
+            </div>
+            <div class="about-section">
+                <h4>Core Skills</h4>
+                <div class="skills-grid">
+                    <span class="skill-tag">Cybersecurity</span>
+                    <span class="skill-tag">Threat Analysis</span>
+                    <span class="skill-tag">Incident Response</span>
+                    <span class="skill-tag">SIEM</span>
+                    <span class="skill-tag">Vulnerability Assessment</span>
+                    <span class="skill-tag">AWS Security</span>
+                    <span class="skill-tag">Cloud Architecture</span>
+                    <span class="skill-tag">Python</span>
+                </div>
+            </div>
+            <div class="about-section">
+                <h4>Interests</h4>
+                <p>When not securing systems, I enjoy exploring new technologies, contributing to open-source security projects, and staying updated with the latest cybersecurity trends and threats.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Overlay -->
+    <div class="overlay" id="overlay"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>
