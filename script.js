@@ -129,7 +129,7 @@ class InteractiveBackground {
     }
     
     createParticles() {
-        const particleCount = Math.floor((window.innerWidth * window.innerHeight) / 11500); // Increased density by 30% (15000 -> 11500)
+        const particleCount = Math.floor((window.innerWidth * window.innerHeight) / 8364); // Increased density by 10% more (9200 -> 8364)
         
         for (let i = 0; i < particleCount; i++) {
             this.particles.push({
@@ -177,12 +177,49 @@ class InteractiveBackground {
             if (particle.x < 0 || particle.x > this.canvas.width) particle.vx *= -1;
             if (particle.y < 0 || particle.y > this.canvas.height) particle.vy *= -1;
             
+            // Determine particle color based on section area
+            const particleColor = this.getParticleColorBySection(particle.x, particle.y);
+            
             // Draw particle
             this.ctx.beginPath();
             this.ctx.arc(particle.x, particle.y, particle.size, 0, Math.PI * 2);
-            this.ctx.fillStyle = 'rgba(77, 77, 77, 0.72)'; // 20% brighter (64->77) and higher opacity (0.6->0.72)
+            this.ctx.fillStyle = particleColor;
             this.ctx.fill();
         });
+    }
+    
+    getParticleColorBySection(x, y) {
+        // Define section areas based on screen quadrants
+        const sectionRadius = 150; // Radius around each section circle
+        
+        // Update section positions first to ensure we have current coordinates
+        this.updateSectionPositions();
+        
+        // Check each section circle for proximity
+        for (let i = 0; i < this.sectionCircles.length; i++) {
+            const section = this.sectionCircles[i];
+            if (section.x && section.y) {
+                const dx = x - section.x;
+                const dy = y - section.y;
+                const distance = Math.sqrt(dx * dx + dy * dy);
+                
+                // If particle is within section radius, use section color
+                if (distance < sectionRadius) {
+                    if (section.element && section.element.classList.contains('professional')) {
+                        return 'rgba(59, 130, 246, 0.7)'; // Blue - increased opacity for visibility
+                    } else if (section.element && section.element.classList.contains('education')) {
+                        return 'rgba(16, 185, 129, 0.7)'; // Green - increased opacity for visibility
+                    } else if (section.element && section.element.classList.contains('contact')) {
+                        return 'rgba(245, 158, 11, 0.7)'; // Orange - increased opacity for visibility
+                    } else if (section.element && section.element.classList.contains('about')) {
+                        return 'rgba(239, 68, 68, 0.7)'; // Red - increased opacity for visibility
+                    }
+                }
+            }
+        }
+        
+        // Fallback to default grey color for particles not in section areas
+        return 'rgba(92, 92, 92, 0.86)';
     }
     
     drawConnections() {
@@ -198,7 +235,7 @@ class InteractiveBackground {
                     this.ctx.beginPath();
                     this.ctx.moveTo(this.particles[i].x, this.particles[i].y);
                     this.ctx.lineTo(this.particles[j].x, this.particles[j].y);
-                    this.ctx.strokeStyle = `rgba(77, 77, 77, ${opacity})`; // 20% brighter color (64->77)
+                    this.ctx.strokeStyle = `rgba(92, 92, 92, ${opacity})`; // 20% brighter again (77->92)
                     this.ctx.lineWidth = 0.5;
                     this.ctx.stroke();
                 }
